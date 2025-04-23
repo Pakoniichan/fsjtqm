@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="styles-5INURTSO.css"><script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-CFKA522L.js" type="module"></script><!-- Contenedor para los corazones -->
+ <!-- Añadir Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="heart-container"></div>
+<!-- Imagen que aparecerá junto a la lluvia -->
+<img id="love-image" src="rose2.png" alt="Amor" style="display: none; position: fixed; bottom: 20px; right: 20px; width: 400px; z-index: 10000;">
+
+
+<!-- Botón para activarla -->
+<button id="start-button" onclick="startHeartRain(); hideButton();" class="btn btn-pink position-absolute top-50 start-50 translate-middle">Feliz día de sant jordi</button>
+
+<style>
+  .heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .heart {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0;
+    animation: fall 6s linear, float 3s ease-in-out;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) translateX(30vw);
+      opacity: 0;
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(2000px) rotate(5deg);
+    }
+  }
+  /* Estilo del botón */
+#start-button {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hotpink;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  z-index: 10001;
+  font-family: 'Pacifico', cursive;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+  transition: all 0.3s ease;
+}
+
+#start-button:hover {
+  background-color: deeppink;
+}
+
+/* Imagen centrada */
+#love-image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  display: none;
+  z-index: 10000;
+}
+
+/* Botón rosa con Bootstrap */
+.btn-pink {
+  background-color: hotpink;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+  transition: all 0.3s ease;
+}
+
+.btn-pink:hover {
+  background-color: deeppink;
+}
+
+
+</style>
